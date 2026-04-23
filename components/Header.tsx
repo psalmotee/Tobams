@@ -1,20 +1,21 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import TobamsLogo from "@/public/tobams-logo.png";
 import Button from "./ui/Button";
 import { User, ChevronDown, Menu, X } from "lucide-react";
 import { useState } from "react";
 
 const navItems = [
-  "About",
-  "What We Do",
-  "Jobs",
-  "Products",
-  "TofA Academy",
-  "Strategy & Planning",
-  "Pricing",
-  "Book a Consultation",
+  { label: "About", hasDropdown: true },
+  { label: "What We Do", hasDropdown: true },
+  { label: "Jobs", hasDropdown: true },
+  { label: "Products" },
+  { label: "TofA Academy" },
+  { label: "Strategy & Planning" },
+  { label: "Pricing" },
+  { label: "Book a Consultation" },
 ];
 
 export function Header() {
@@ -22,12 +23,9 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-black/10 bg-white shadow-sm">
+      {/* Top Bar */}
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-2.5 sm:px-6 md:px-8 xl:px-10">
-        <a
-          href="#"
-          className="flex items-center gap-3 rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary"
-          aria-label="Tobams Group home"
-        >
+        <Link href="#" className="flex items-center gap-3">
           <Image
             src={TobamsLogo}
             alt="Tobams Group logo"
@@ -35,7 +33,9 @@ export function Header() {
             height={64}
             priority
           />
-        </a>
+        </Link>
+
+        {/* Desktop Right */}
         <div className="hidden items-center gap-2 sm:flex sm:gap-3">
           <Button
             leftIcon={
@@ -49,38 +49,35 @@ export function Header() {
           </Button>
           <Button variant="secondary">Take Assessment</Button>
         </div>
+
+        {/* Mobile Toggle */}
         <button
           type="button"
           className="inline-flex items-center justify-center rounded-lg border bg-foreground p-1 text-white sm:hidden"
-          aria-label="Toggle navigation menu"
           onClick={() => setMobileOpen((prev) => !prev)}
         >
-          {mobileOpen ? (
-            <X
-              size={24}
-              className="transition-transform duration-200 rotate-0"
-            />
-          ) : (
-            <Menu
-              size={24}
-              className="transition-transform duration-200 rotate-0"
-            />
-          )}
+          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {mobileOpen ? (
-        <div className="absolute left-0 top-full z-40 w-full border-t border-black/5 bg-white px-4 py-4 sm:hidden shadow-md transition-all duration-200">
+      {/* Mobile Menu */}
+      {mobileOpen && (
+        <div className="absolute left-0 top-full z-40 w-full border-t border-black/5 bg-white px-4 py-4 shadow-md sm:hidden">
           <ul className="space-y-3 text-sm font-semibold text-primary/85">
             {navItems.map((item) => (
-              <li key={item}>
-                <a
+              <li key={item.label}>
+                <Link
                   href="#"
-                  className="block rounded-sm py-1 transition hover:text-secondary"
+                  className="group relative inline-flex items-center gap-1 py-1"
                   onClick={() => setMobileOpen(false)}
                 >
-                  {item}
-                </a>
+                  <span>{item.label}</span>
+
+                  {item.hasDropdown && <ChevronDown size={16} />}
+
+                  {/* underline */}
+                  <span className="absolute left-0 -bottom-1 h-[1px] w-0 bg-current transition-all duration-300 group-hover:w-full group-active:w-full"></span>
+                </Link>
               </li>
             ))}
           </ul>
@@ -102,21 +99,29 @@ export function Header() {
             </Button>
           </div>
         </div>
-      ) : null}
+      )}
 
-      <nav
-        aria-label="Primary"
-        className="hidden border-t border-black/5 bg-white sm:block"
-      >
-        <ul className="mx-auto flex w-full max-w-7xl flex-wrap items-center justify-center gap-x-4 gap-y-1.5 px-4 py-2.5 text-[11px] font-semibold text-primary/80 sm:gap-x-5 sm:text-xs md:text-[12px] xl:px-10">
+      {/* Desktop Nav */}
+      <nav className="hidden border-t border-black/5 bg-white sm:block">
+        <ul className="mx-auto flex w-full max-w-7xl flex-wrap items-center justify-center gap-x-4 gap-y-1.5 px-4 py-2.5 text-[11px] font-semibold text-primary/80 sm:gap-x-5 sm:text-xs md:text-[18px] xl:px-10">
           {navItems.map((item) => (
-            <li key={item}>
-              <a
+            <li key={item.label}>
+              <Link
                 href="#"
-                className="rounded-sm transition hover:text-secondary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary"
+                className="group relative inline-flex items-center gap-1"
               >
-                {item}
-              </a>
+                <span>{item.label}</span>
+
+                {item.hasDropdown && (
+                  <ChevronDown
+                    size={16}
+                    className="transition-transform duration-200"
+                  />
+                )}
+
+                {/* underline */}
+                <span className="absolute left-0 -bottom-1 h-[1px] w-0 bg-current transition-all duration-300 group-hover:w-full"></span>
+              </Link>
             </li>
           ))}
         </ul>
