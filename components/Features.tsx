@@ -1,8 +1,8 @@
 import Image from "next/image";
-import LMS from "@/public/lms.jpg";
-import Corporate from "@/public/corporate.jpg";
-import Personalise from "@/public/personalise.jpg";
-import Capacity from "@/public/capacity.jpg";
+import LMSImage from "@/public/lms.jpg";
+import CorporateImage from "@/public/corporate.jpg";
+import PersonaliseImage from "@/public/personalise.jpg";
+import CapacityImage from "@/public/capacity.jpg";
 import Button from "./ui/Button";
 import { ArrowUpRight, Zap } from "lucide-react";
 
@@ -17,7 +17,7 @@ const programs = [
       "Sustainability Training",
       "Customised Training",
     ],
-    image: Corporate,
+    image: CorporateImage,
     imageAlt: "Corporate team discussing strategy in a training room",
     reverse: false,
   },
@@ -32,7 +32,7 @@ const programs = [
       "Time Management and Productivity",
       "Career Development",
     ],
-    image: Personalise,
+    image: PersonaliseImage,
     imageAlt: "Individual coaching and training session",
     reverse: true,
   },
@@ -47,7 +47,7 @@ const programs = [
       "Collaborative Learning Environment",
       "Ongoing Support and Resources",
     ],
-    image: Capacity,
+    image: CapacityImage,
     imageAlt: "Facilitator presenting charts during capacity workshop",
     reverse: false,
   },
@@ -63,7 +63,7 @@ export function Features() {
           </h2>
           <div className="mx-auto h-56.75 w-56.75 md:h-106.75 md:w-106.75 lg:h-139.25 lg:w-142">
             <Image
-              src={LMS}
+              src={LMSImage}
               alt="Learners collaborating during a learning management session"
               width={600}
               height={600}
@@ -77,7 +77,7 @@ export function Features() {
             </h2>
 
             <div className="mt-4 rounded-xl bg-primary/10 p-6 ">
-              <p className="text-sm leading-relaxed sm:text-lg">
+              <p className="text-sm leading-relaxed sm:text-lg font-normal">
                 TG Academy is a hub of knowledge and skill-building resources
                 designed to empower tech talents on their learning journey. From
                 technical courses covering the latest programming languages and
@@ -145,10 +145,10 @@ export function Features() {
               <h3 className="text-xl font-semibold leading-normal tracking-[0.6px] sm:text-[30px] sm:tracking-[0.9px] md:text-[40px] md:tracking-[1.2px]">
                 {program.title}
               </h3>
-              <p className="mt-3 max-w-[58ch] text-sm leading-relaxed sm:text-lg">
+              <p className="mt-3 max-w-[58ch] text-sm leading-relaxed sm:text-lg font-normal">
                 {program.text}
               </p>
-              <ul className="mt-4 space-y-1 text-sm leading-relaxed sm:text-lg">
+              <ul className="mt-4 space-y-1 text-sm leading-relaxed sm:text-lg font-normal">
                 {program.points.map((point) => (
                   <li key={point} className="flex items-center gap-2">
                     <span className="shrink-0">
