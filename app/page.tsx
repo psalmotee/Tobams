@@ -1,9 +1,9 @@
-import { CtaBanner } from "@/components/CtaBanner";
-import { Features } from "@/components/Features";
-import { Footer } from "@/components/Footer";
-import { Hero } from "@/components/Hero";
 import { Header } from "@/components/Header";
+import { Hero } from "@/components/Hero";
+import { Features } from "@/components/Features";
 import { ProgramShowcase } from "@/components/ProgramShowcase";
+import { CtaBanner } from "@/components/CtaBanner";
+// import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -15,7 +15,7 @@ export default function Home() {
         <ProgramShowcase />
         <CtaBanner />
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

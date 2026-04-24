@@ -179,7 +179,7 @@ export function ProgramShowcase() {
             rightIcon={<ArrowUpRight size={16} className="text-white" />}
             className="mt-8"
           >
-            Learn more
+            Learn More
           </Button>
         </div>
       </section>
