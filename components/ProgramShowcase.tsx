@@ -167,7 +167,7 @@ export function ProgramShowcase() {
             {consultantItems.map((item) => (
               <article key={item.title} className="">
                 <h4 className="text-md md:text-lg font-bold">{item.title}</h4>
-                <p className="mt-2 text-sm md:text-lg font-normal leading-">
+                <p className="mt-2 text-sm md:text-lg font-normal">
                   {item.text}
                 </p>
               </article>

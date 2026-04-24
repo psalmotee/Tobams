@@ -3,6 +3,7 @@ import { Hero } from "@/components/Hero";
 import { Features } from "@/components/Features";
 import { ProgramShowcase } from "@/components/ProgramShowcase";
 import { CtaBanner } from "@/components/CtaBanner";
+import { Testimonial } from "@/components/Testimonial";
 import { Footer } from "@/components/Footer";
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
         <Features />
         <ProgramShowcase />
         <CtaBanner />
+        <Testimonial />
       </main>
       <Footer />
     </>
