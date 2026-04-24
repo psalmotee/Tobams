@@ -94,7 +94,7 @@ export function Header() {
             >
               Account
             </Button>
-            <Button className="w-full justify-center" variant="secondary">
+            <Button className="w-full text-white justify-center" variant="secondary">
               Take Assessment
             </Button>
           </div>

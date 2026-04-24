@@ -13,6 +13,7 @@ export function CtaBanner() {
           <Button
             size="lg"
             className="mt-8 bg-white text-primary hover:bg-white/90"
+            variant="secondary"
           >
             Book a Consultation
           </Button>
