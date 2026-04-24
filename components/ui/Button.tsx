@@ -16,7 +16,7 @@ export default function Button({
   className = "",
 }: ButtonProps) {
   const base =
-    "inline-flex items-center justify-center gap-2 cursor-pointer font-semibold rounded transition focus-visible:outline-2 focus-visible:outline-offset-2 w-fit ";
+    "inline-flex items-center justify-center gap-2 cursor-pointer font-semibold rounded transition focus-visible:outline-2 focus-visible:outline-offset-2 w-fit text-sm font-semibold sm:text-lg";
 
   const variants = {
     primary: "bg-primary text-white hover:bg-primary/90",
@@ -24,10 +24,10 @@ export default function Button({
   };
 
   const sizes = {
-    sm: "px-4 py-2 text-[11px] h-12 sm:text-lg",
-    md: "px-[24px] py-[10.5px] h-12 text-lg",
-    lg: "px-[20px] py-[10.5px] h-12 text-lg",
-    xlg: "px-6 py-3 text-lg",
+    sm: "px-5.5 py-3 h-10 sm:px-4 sm:py-2 sm:h-12",
+    md: "px-5.5 py-3 h-10 sm:px-6 sm:py-[10.5px] sm:h-12",
+    lg: "px-5.5 py-3 h-10 sm:px-5 sm:py-[10.5px] sm:h-12",
+    xlg: "px-5.5 py-3 h-10 sm:px-6 sm:py-3 sm:h-12",
   };
 
   return (
