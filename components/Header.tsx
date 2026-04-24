@@ -36,7 +36,7 @@ export function Header() {
         </Link>
 
         {/* Desktop Right */}
-        <div className="hidden items-center gap-2 sm:flex sm:gap-3">
+        <div className="hidden items-center gap-2 sm:flex sm:gap-4">
           <Button
             leftIcon={
               <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#ddd0da] text-primary">
@@ -102,7 +102,7 @@ export function Header() {
       )}
 
       {/* Desktop Nav */}
-      <nav className="hidden border-t border-black/5 bg-white sm:block">
+      <nav className="hidden border-t border-black/5 bg-white sm:block py-2">
         <ul className="mx-auto flex w-full max-w-7xl flex-wrap items-center justify-center gap-x-4 gap-y-1.5 px-4 py-2.5 text-[11px] font-semibold text-primary/80 sm:gap-x-5 sm:text-xs md:text-[18px] xl:px-10">
           {navItems.map((item) => (
             <li key={item.label}>
