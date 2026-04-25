@@ -47,7 +47,7 @@ export function Header() {
           >
             Account
           </Button>
-          <Button variant="secondary" size="lg">Take Assessment</Button>
+          <Button variant="secondary" className="text-white" size="lg">Take Assessment</Button>
         </div>
 
         {/* Mobile Toggle */}
@@ -76,7 +76,7 @@ export function Header() {
                   {item.hasDropdown && <ChevronDown size={16} />}
 
                   {/* underline */}
-                  <span className="absolute left-0 -bottom-1 h-[1px] w-0 bg-current transition-all duration-300 group-hover:w-full group-active:w-full"></span>
+                  <span className="absolute left-0 -bottom-1 h-1px w-0 bg-current transition-all duration-300 group-hover:w-full group-active:w-full"></span>
                 </Link>
               </li>
             ))}
@@ -120,7 +120,7 @@ export function Header() {
                 )}
 
                 {/* underline */}
-                <span className="absolute left-0 -bottom-1 h-[1px] w-0 bg-current transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute left-0 -bottom-1 h-px w-0 bg-current transition-all duration-300 group-hover:w-full"></span>
               </Link>
             </li>
           ))}
