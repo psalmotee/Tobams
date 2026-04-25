@@ -30,7 +30,7 @@ export default function RootLayout({
       lang="en"
       className={`${nunito.variable} ${nunitoSans.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-background font-sans text-foreground">
+      <body className="min-h-full flex flex-col bg-background font-sans text">
         {children}
       </body>
     </html>

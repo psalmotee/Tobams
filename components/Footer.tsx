@@ -64,8 +64,9 @@ export function Footer() {
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-7xl p-4 sm:px-8 lg:px-16 lg:py-10 bg-[#11040E]">
-        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-5">
+      <section className="mx-auto w-full-7xl bg-[#11040E]">
+      <div className="mx-auto w-full p-4 sm:items-center max-w-7xl sm:px-8  bg-[#11040E]">
+        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
           <article>
             <Image
               src={TobamsLogo}
@@ -217,6 +218,7 @@ export function Footer() {
             </div>
           </div>
         </div>
+      </div>
       </section>
     </footer>
   );
